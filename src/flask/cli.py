@@ -55,7 +55,8 @@ def find_best_app(module: ModuleType) -> Flask:
     matches = [v for v in module.__dict__.values() if isinstance(v, Flask)]
 
     if len(matches) == 1:
-        return matches[0]
+        # return matches[0]
+        return None
     elif len(matches) > 1:
         raise NoAppException(
             "Detected multiple Flask applications in module"
